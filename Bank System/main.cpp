@@ -1,54 +1,49 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Admin.h"
-#include "Employee.h"
 #include "Client.h"
+#include "Employee.h"
+#include "Admin.h"
 
 using namespace std;
 
 int main(){
-    Employee e(12, "ahmedmahmod", "4664123asd", 5000),e1(13, "mozzaftany", "4664123abd", 6000);
-    Admin a(10,"mohsenElmoder","22211133bb",10000);
-    Client c(1,"mahmd","654321asd",3000), c1(2, "abdelhamid", "12356abdo", 2000);
+   Admin a(10,"Admin","22211133bb",10000);
+Employee e(12, "Employee 1", "4664123asd", 5000), e1(13, "Employee 2", "4664123abd", 6000);
+Client c(1,"Client 1 ","654321asd",3000), c1(2, "Client 2", "12356abdo", 4000);
 
-   //employee :
-   cout<< " employee info \n";
+//Admin info :
+cout << "    Admin : \n";
+cout << "============\n";
+a.PrintINFO();
+cout << "\n===================\n";
+
+//Employee info :
+cout << "  Employee : \n";
+cout << "============\n";
 e.PrintINFO();
+cout << "============\n";
 e1.PrintINFO();
-cout << "==================\n";
+cout << "\n===================\n";
 
-e.addClient(c);
-e.addClient(c1);
-
-cout<< " employee search for client \n";
-e.searchforClient(1);
-cout << "==================\n";
-cout<< " Clients info from employee\n";
-e.PrintClientsINFO();
-
-//client :
-cout<< " Deposit \n";
-c.Deposit(2000);
+//Client info :
+cout << " Client : \n";
+cout << "============\n";
+cout << "befor deposit\n";
 c.PrintINFO();
 
-cout<< " Withdraw \n";
-c.Withdraw(1000);
+cout << "after deposit\n";
+c.deposit(2000);
 c.PrintINFO();
 
-cout<< " Transfer \n";
-c.TransferTo(1000, c1);
+cout << "after withdraw\n";
+c.withdraw(1010);
+c.PrintINFO();
+
+cout << "after transfer\n";
+c.transferTo(500, c1);
 c.PrintINFO();
 c1.PrintINFO();
-cout << "==================\n";
-
-//admin :
-a.addEmployee(e);
-a.addEmployee(e1);
-cout << "==================\n";
-a.PrintINFO();
-cout << "==================\n";
-cout<< " employee info from admin \n";
-a.PrintEmployeeINFO();
+cout << "\n===================\n";
 
 }

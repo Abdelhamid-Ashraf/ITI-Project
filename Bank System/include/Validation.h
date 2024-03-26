@@ -5,9 +5,8 @@
 
 using namespace std;
 
-class Validation
-{
-    public:
+class Validation{
+public:
 	static void validName(string Name) {
         if (Name.size() >= 5 && Name.size() <= 20) {
             for (int i = 0; i < Name.size(); i++) {
@@ -24,6 +23,7 @@ class Validation
             cout << "Password must be 8 to 20 char\n";
         }
     }
+
 };
 
 #endif // VALIDATION_H
