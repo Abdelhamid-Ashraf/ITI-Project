@@ -14,10 +14,10 @@ public:
     Person() {
         ID = 0;
     }
-    Person(int ID, string Name, string Passowrd) {
+    Person(int ID, string Name, string Password) {
         this->ID = ID;
         this->Name = Name;
-        this->Password = Passowrd;
+        this->Password = Password;
     }
 
     //Setters:

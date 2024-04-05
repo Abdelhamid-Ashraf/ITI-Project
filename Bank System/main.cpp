@@ -4,13 +4,15 @@
 #include "Client.h"
 #include "Employee.h"
 #include "Admin.h"
+#include "DataSourceInterface.h"
+#include "FileManager.h"
 
 using namespace std;
 
 int main(){
-   Admin a(10,"Admin","22211133bb",10000);
-Employee e(12, "Employee 1", "4664123asd", 5000), e1(13, "Employee 2", "4664123abd", 6000);
-Client c(1,"Client 1 ","654321asd",3000), c1(2, "Client 2", "12356abdo", 4000);
+Admin a(10,"Admin","22211133bb",10000);
+Employee e(12, "Employee a", "4664123asd", 5000), e1(13, "Employee b", "4664123abd", 6000);
+Client c(1,"Client a","654321asd",3000), c1(2, "Client b", "12356abdo", 4000), c2(3, "Client c", "123487bbr", 6000);
 
 //Admin info :
 cout << "    Admin : \n";
