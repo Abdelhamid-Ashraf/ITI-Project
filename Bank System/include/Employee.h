@@ -18,13 +18,13 @@ public:
         this->Salary = 0;
     }
     Employee(int ID, string Name, string Password, double Salary) :Person(ID, Name, Password) {
-        setSalary(Salary);
+        setSalary(&Salary);
     }
 
     //Setters:
-    void setSalary(double Salary) {
+    void setSalary(double* Salary) {
         if (Validation::validSalary(Salary)) {
-            this->Salary = Salary;
+            this->Salary = *Salary;
         }
         else
             cout << "the least amount to open an account is 5000 \n";
@@ -41,11 +41,11 @@ public:
         clients.emplace_back(client);
     }
 
-    Client* serachClient(int ID) {
+    Client* searchClient(int ID) {
         for (auto& client : clients) {
             if (client.getID() == ID) {
-                return &client;
                 client.PrintINFO();
+                return &client;
             }
         }
     }
@@ -70,24 +70,27 @@ public:
                         cout << "please enter the new name \n";
                         string newname;
                         cin >> newname;
-                        client.setName(newname);
+                        client.setName(&newname);
                         cout << "name hase been changed successfully " << client.getName() << endl;
+                        return;
                     }
                     else if (answer == 2) {
                         cout << "current Password is : " << client.getPassword() << endl;
                         cout << "please enter the new Password \n";
                         string newPassword;
                         cin >> newPassword;
-                        client.setPassword(newPassword);
+                        client.setPassword(&newPassword);
                         cout << "Password hase been changed successfully " << client.getPassword() << endl;
+                        return;
                     }
                     else if (answer == 3) {
                         cout << "current Balance is : " << client.getBalance() << endl;
                         cout << "please enter the new Balance \n";
                         double newBalance;
                         cin >> newBalance;
-                        client.setBalance(newBalance);
+                        client.setBalance(&newBalance);
                         cout << "Balance hase been changed successfully " << client.getBalance() << endl;
+                        return;
                     }
                     else if (answer == 4) {
                         cout << "thank you\n";
@@ -107,8 +110,7 @@ public:
 
     //print employee info :
     void PrintINFO() {
-        cout << "employee ID : " << this->ID << endl;
-        cout << "employee Name : " << this->Name << endl;
+        Person::PrintINFO();
         cout << "employee Salary : " << this->Salary << endl;
     }
 

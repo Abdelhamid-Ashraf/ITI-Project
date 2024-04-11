@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Employee.h"
-#include "vector"
+#include <vector>
 
 
 using namespace std;
@@ -53,24 +53,27 @@ public:
                         cout << "please enter the new name \n";
                         string newname;
                         cin >> newname;
-                        employee.setName(newname);
+                        employee.setName(&newname);
                         cout << "name hase been changed successfully " << employee.getName() << endl;
+                        return;
                     }
                     else if (answer == 2) {
                         cout << "current Password is : " << employee.getPassword() << endl;
                         cout << "please enter the new Password \n";
                         string newPassword;
                         cin >> newPassword;
-                        employee.setPassword(newPassword);
+                        employee.setPassword(&newPassword);
                         cout << "Password hase been changed successfully " << employee.getPassword() << endl;
+                        return;
                     }
                     else if (answer == 3) {
                         cout << "current Salary is : " << employee.getSalary() << endl;
                         cout << "please enter the new Salary \n";
                         double newSalary;
                         cin >> newSalary;
-                        employee.setSalary(newSalary);
+                        employee.setSalary(&newSalary);
                         cout << "Salary hase been changed successfully " << employee.getSalary() << endl;
+                        return;
                     }
                     else if (answer == 4) {
                         cout << "thank you\n";
@@ -88,11 +91,6 @@ public:
         }
     }
 
-    void PrintINFO() {
-        cout << "Admin ID : " << this->ID << endl;
-        cout << "Admin Name : " << this->Name << endl;
-        cout << "Admin Salary : " << this->Salary << endl;
-    }
 };
 
 #endif // ADMIN_H

@@ -1,6 +1,7 @@
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
 #include <iostream>
+#include <string>
 #include <vector>
 #include "fstream"
 #include "Client.h"
@@ -9,7 +10,7 @@
 #include "DataSourceInterface.h"
 
 class FileManager:public DataSourceInterface{
-   private:
+  protected:
 	vector<Client>clients;
 	vector<Employee>employees;
 	vector<Admin>admins;
@@ -21,6 +22,7 @@ public:
 		clients.emplace_back(client);
 		myfile.open("Client.txt", ios::app);
 		if (myfile.is_open()) {
+
 			myfile << client.getID() << "&&" << client.getName() << "&&" << client.getBalance() << "&&" << client.getPassword()<<endl;
 			myfile.close();
 		}
@@ -87,6 +89,7 @@ public:
 	void removeAllAdmins() {
 		remove("Admin.txt");
 	}
+
 };
 
 #endif // FILEMANAGER_H

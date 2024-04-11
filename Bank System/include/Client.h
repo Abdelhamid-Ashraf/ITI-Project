@@ -15,13 +15,13 @@ public:
         Balance = 0;
     }
     Client(int ID, string Name, string Password, double Balance) :Person(ID, Name, Password) {
-        setBalance(Balance);
+        setBalance(&Balance);
     }
 
     //Setters:
-    void setBalance(double Balance) {
+    void setBalance(double* Balance) {
         if (Validation::validBalance(Balance)) {
-            this->Balance = Balance;
+            this->Balance = *Balance;
         }
         else
             cout << "the least amount to open an account is 1500 \n";
@@ -52,16 +52,16 @@ public:
         else
             cout << "not enough balance\n";
     }
-    /*void checkBalance() {
+    void checkBalance() {
         cout << "Balance : " << this->Balance << endl;
-    }*/
+    }
 
     void PrintINFO() {
-        cout << "Client ID : " << this->ID << endl;
-        cout << "Client Name : " << this->Name << endl;
+        Person::PrintINFO();
         cout << "Account Balance : " << this->Balance << endl;
         cout << "====================\n";
     }
+
 };
 
 #endif // CLIENT_H
