@@ -15,13 +15,12 @@ public:
         Balance = 0;
     }
     Client(int ID, string Name, string Password, double Balance) :Person(ID, Name, Password) {
-        this->Balance = Balance;
+        setBalance(Balance);
     }
 
     //Setters:
     void setBalance(double Balance) {
-        double b = 1500;
-        if (Balance >= b) {
+        if (Validation::validBalance(Balance)) {
             this->Balance = Balance;
         }
         else
@@ -40,7 +39,10 @@ public:
     void withdraw(double amount) {
         if (amount <= this->Balance) {
             this->Balance -= amount;
+            cout << "Successfull transaction\n";
         }
+        else
+            cout << "\nAmount excceded\n";
     }
     void transferTo(double amount, Client& recipient) {
         if (amount <= this->Balance) {
@@ -50,12 +52,14 @@ public:
         else
             cout << "not enough balance\n";
     }
-
+    /*void checkBalance() {
+        cout << "Balance : " << this->Balance << endl;
+    }*/
 
     void PrintINFO() {
-        cout << " Client Name : " << getName() << endl;
-        cout << " Client ID : " << getID() << endl;
-        cout << "Account Balance :" << getBalance() << endl;
+        cout << "Client ID : " << this->ID << endl;
+        cout << "Client Name : " << this->Name << endl;
+        cout << "Account Balance : " << this->Balance << endl;
         cout << "====================\n";
     }
 };

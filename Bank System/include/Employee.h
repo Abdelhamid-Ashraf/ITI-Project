@@ -3,26 +3,27 @@
 #include <iostream>
 #include <string>
 #include "Person.h"
-
+#include <vector>
+#include "Client.h"
 
 using namespace std;
 
 class Employee:public Person{
 protected:
     double Salary;
+    vector<Client>clients;
 public:
     //Constructor:
     Employee() {
-        Salary = 0;
+        this->Salary = 0;
     }
     Employee(int ID, string Name, string Password, double Salary) :Person(ID, Name, Password) {
-        this->Salary = Salary;
+        setSalary(Salary);
     }
 
     //Setters:
     void setSalary(double Salary) {
-        double b = 5000;
-        if (Salary >= b) {
+        if (Validation::validSalary(Salary)) {
             this->Salary = Salary;
         }
         else
@@ -36,11 +37,79 @@ public:
 
 
     //Methods :
+    void addClient(Client&client) {
+        clients.emplace_back(client);
+    }
+
+    Client* serachClient(int ID) {
+        for (auto& client : clients) {
+            if (client.getID() == ID) {
+                return &client;
+                client.PrintINFO();
+            }
+        }
+    }
+
+    void ListClients() {
+        for (auto& client : clients) {
+            client.PrintINFO();
+        }
+    }
+
+    void EditClient(int ID, string Name, string Password, double Balance) {
+        for (auto& client : clients) {
+            if (client.getID() == ID && client.getName() == Name && client.getPassword() == Password && client.getBalance() == Balance) {
+                int answer;
+                do
+                {
+                    cout << "What do u want to change ?\n";
+                    cout << "1- Name\n2- Password\n3- Balance\n4- Exit\n";
+                    cin >> answer;
+                    if (answer == 1) {
+                        cout << "current name is : " << client.getName() << endl;
+                        cout << "please enter the new name \n";
+                        string newname;
+                        cin >> newname;
+                        client.setName(newname);
+                        cout << "name hase been changed successfully " << client.getName() << endl;
+                    }
+                    else if (answer == 2) {
+                        cout << "current Password is : " << client.getPassword() << endl;
+                        cout << "please enter the new Password \n";
+                        string newPassword;
+                        cin >> newPassword;
+                        client.setPassword(newPassword);
+                        cout << "Password hase been changed successfully " << client.getPassword() << endl;
+                    }
+                    else if (answer == 3) {
+                        cout << "current Balance is : " << client.getBalance() << endl;
+                        cout << "please enter the new Balance \n";
+                        double newBalance;
+                        cin >> newBalance;
+                        client.setBalance(newBalance);
+                        cout << "Balance hase been changed successfully " << client.getBalance() << endl;
+                    }
+                    else if (answer == 4) {
+                        cout << "thank you\n";
+                        break;
+                    }
+                    else
+                        cout << "wrong aswer\n";
+
+                } while (answer >= 1 || answer <= 4);
+            }
+            else if (client.getID() != ID || client.getName() != Name || client.getPassword() != Password || client.getBalance() != Balance) {
+                cout << "Client is not found\n";
+                break;
+            }
+        }
+    }
+
     //print employee info :
     void PrintINFO() {
-        cout << "Employee Name : " << getName() << endl;
-        cout << "Employee ID : " << getID() << endl;
-        cout << "Employee Salary : " << getSalary() << endl;
+        cout << "employee ID : " << this->ID << endl;
+        cout << "employee Name : " << this->Name << endl;
+        cout << "employee Salary : " << this->Salary << endl;
     }
 
 };

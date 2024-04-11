@@ -12,12 +12,12 @@ protected:
 public:
     //Constructor:
     Person() {
-        ID = 0;
+        this->ID = 0;
     }
     Person(int ID, string Name, string Password) {
-        this->ID = ID;
-        this->Name = Name;
-        this->Password = Password;
+        setID(ID);
+        setName(Name);
+        setPassword(Password);
     }
 
     //Setters:
@@ -25,13 +25,19 @@ public:
         this->ID = ID;
     }
     void setName(string Name) {
-       Validation::validName(Name);
-        this->Name = Name;
+        if (Validation::validName(Name)) {
+            this->Name = Name;
+        }
+        else
+            cout << "Name must be 5 to 20 alphabetic characters\n";
     }
 
     void setPassword(string Password) {
-       Validation::validPass(Password);
-        this->Password = Password;
+        if (Validation::validPass(Password)) {
+            this->Password = Password;
+        }
+        else
+            cout << "Name must be 8 to 20 characters\n";
     }
 
     //Getters:
@@ -46,9 +52,7 @@ public:
     }
 
     //Methods:
-
     virtual void PrintINFO() = 0;
-
 };
 
 #endif // PERSON_H
