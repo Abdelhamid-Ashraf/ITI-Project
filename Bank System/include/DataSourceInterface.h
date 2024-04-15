@@ -21,7 +21,7 @@ class DataSourceInterface{
 
 	virtual vector<Employee>getAllEmployees() = 0;
 
-	virtual vector<Employee>getAllAdmins() = 0;
+	virtual vector<Admin>getAllAdmins() = 0;
 
 
 	virtual void removeAllClients() = 0;

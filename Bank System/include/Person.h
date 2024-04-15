@@ -17,25 +17,25 @@ public:
     }
     Person(int ID, string Name, string Password) {
         setID(ID);
-        setName(&Name);
-        setPassword(&Password);
+        setName(Name);
+        setPassword(Password);
     }
 
     //Setters:
     void setID(int ID) {
         this->ID = ID;
     }
-    void setName(string *Name) {
-        if (Validation::validName(*Name)) {
-            this->Name =* Name;
+    void setName(string Name) {
+        if (Validation::validName(Name)) {
+            this->Name = Name;
         }
         else
             cout << "Name must be 5 to 20 alphabetic characters\n";
     }
 
-    void setPassword(string *Password) {
-        if (Validation::validPass(*Password)) {
-            this->Password =* Password;
+    void setPassword(string Password) {
+        if (Validation::validPass(Password)) {
+            this->Password = Password;
         }
         else
             cout << "Name must be 8 to 20 characters\n";

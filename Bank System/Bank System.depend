@@ -13,7 +13,7 @@
 1711057061 source:d:\coding\codeblocks\bank system\src\person.cpp
 	"Person.h"
 
-1712765541 d:\coding\codeblocks\bank system\include\person.h
+1713210964 d:\coding\codeblocks\bank system\include\person.h
 	<iostream>
 	<string>
 	"Validation.h"
@@ -21,18 +21,18 @@
 1711058097 source:d:\coding\codeblocks\bank system\src\client.cpp
 	"Client.h"
 
-1712765541 d:\coding\codeblocks\bank system\include\client.h
+1713210964 d:\coding\codeblocks\bank system\include\client.h
 	<iostream>
 	<string>
 	"Person.h"
 
-1712765588 d:\coding\codeblocks\bank system\include\admin.h
+1713210964 d:\coding\codeblocks\bank system\include\admin.h
 	<iostream>
 	<string>
 	"Employee.h"
-	"vector"
+	<vector>
 
-1712765541 d:\coding\codeblocks\bank system\include\employee.h
+1713210964 d:\coding\codeblocks\bank system\include\employee.h
 	<iostream>
 	<string>
 	"Person.h"
@@ -45,32 +45,59 @@
 1711062171 source:d:\coding\codeblocks\bank system\src\employee.cpp
 	"Employee.h"
 
-1712765541 d:\coding\codeblocks\bank system\include\validation.h
+1713210964 d:\coding\codeblocks\bank system\include\validation.h
 	<iostream>
 	<string>
 
 1711476715 source:d:\coding\codeblocks\bank system\src\validation.cpp
 	"Validation.h"
 
-1712765711 d:\coding\codeblocks\bank system\include\datasourceinterface.h
+1713210964 d:\coding\codeblocks\bank system\include\datasourceinterface.h
 	<iostream>
 	<vector>
 	"Client.h"
 	"Employee.h"
 	"Admin.h"
 
-1712329489 d:\coding\codeblocks\bank system\include\filemanager.h
+1713210964 d:\coding\codeblocks\bank system\include\filemanager.h
 	<iostream>
+	<string>
 	<vector>
 	"fstream"
 	"Client.h"
 	"Employee.h"
 	"Admin.h"
 	"DataSourceInterface.h"
+	"FilesHelper.h"
 
-1712327850 source:d:\coding\codeblocks\bank system\src\datasourceinterface.cpp
+1712765692 source:d:\coding\codeblocks\bank system\src\datasourceinterface.cpp
 	"DataSourceInterface.h"
 
 1712327928 source:d:\coding\codeblocks\bank system\src\filemanager.cpp
 	"FileManager.h"
+
+1713211012 d:\coding\codeblocks\bank system\include\fileshelper.h
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	"Client.h"
+	"Employee.h"
+	"Admin.h"
+	"Parser.h"
+
+1713210964 d:\coding\codeblocks\bank system\include\parser.h
+	<iostream>
+	<vector>
+	<string>
+	<sstream>
+	"Client.h"
+	"Employee.h"
+	"Admin.h"
+
+1713210433 source:d:\coding\codeblocks\bank system\src\fileshelper.cpp
+	"FilesHelper.h"
+
+1713210558 source:d:\coding\codeblocks\bank system\src\parser.cpp
+	"Parser.h"
 

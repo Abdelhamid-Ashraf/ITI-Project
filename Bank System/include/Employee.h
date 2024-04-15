@@ -18,13 +18,13 @@ public:
         this->Salary = 0;
     }
     Employee(int ID, string Name, string Password, double Salary) :Person(ID, Name, Password) {
-        setSalary(&Salary);
+        setSalary(Salary);
     }
 
     //Setters:
-    void setSalary(double* Salary) {
+    void setSalary(double Salary) {
         if (Validation::validSalary(Salary)) {
-            this->Salary = *Salary;
+            this->Salary = Salary;
         }
         else
             cout << "the least amount to open an account is 5000 \n";
@@ -70,8 +70,8 @@ public:
                         cout << "please enter the new name \n";
                         string newname;
                         cin >> newname;
-                        client.setName(&newname);
-                        cout << "name hase been changed successfully " << client.getName() << endl;
+                        client.setName(newname);
+                        cout << "name has been changed successfully " << client.getName() << endl;
                         return;
                     }
                     else if (answer == 2) {
@@ -79,8 +79,8 @@ public:
                         cout << "please enter the new Password \n";
                         string newPassword;
                         cin >> newPassword;
-                        client.setPassword(&newPassword);
-                        cout << "Password hase been changed successfully " << client.getPassword() << endl;
+                        client.setPassword(newPassword);
+                        cout << "Password has been changed successfully " << client.getPassword() << endl;
                         return;
                     }
                     else if (answer == 3) {
@@ -88,8 +88,8 @@ public:
                         cout << "please enter the new Balance \n";
                         double newBalance;
                         cin >> newBalance;
-                        client.setBalance(&newBalance);
-                        cout << "Balance hase been changed successfully " << client.getBalance() << endl;
+                        client.setBalance(newBalance);
+                        cout << "Balance has been changed successfully " << client.getBalance() << endl;
                         return;
                     }
                     else if (answer == 4) {

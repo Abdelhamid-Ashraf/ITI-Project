@@ -53,8 +53,8 @@ public:
                         cout << "please enter the new name \n";
                         string newname;
                         cin >> newname;
-                        employee.setName(&newname);
-                        cout << "name hase been changed successfully " << employee.getName() << endl;
+                        employee.setName(newname);
+                        cout << "name has been changed successfully " << employee.getName() << endl;
                         return;
                     }
                     else if (answer == 2) {
@@ -62,8 +62,8 @@ public:
                         cout << "please enter the new Password \n";
                         string newPassword;
                         cin >> newPassword;
-                        employee.setPassword(&newPassword);
-                        cout << "Password hase been changed successfully " << employee.getPassword() << endl;
+                        employee.setPassword(newPassword);
+                        cout << "Password has been changed successfully " << employee.getPassword() << endl;
                         return;
                     }
                     else if (answer == 3) {
@@ -71,7 +71,7 @@ public:
                         cout << "please enter the new Salary \n";
                         double newSalary;
                         cin >> newSalary;
-                        employee.setSalary(&newSalary);
+                        employee.setSalary(newSalary);
                         cout << "Salary hase been changed successfully " << employee.getSalary() << endl;
                         return;
                     }

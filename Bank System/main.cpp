@@ -16,29 +16,29 @@ int main() {
 	Employee e(12, "Employee a", "4664123asd", 5000), e1(13, "Employee b", "4664123abd", 6000);
 	Client c(1, "Client a", "654321asd", 3000), c1(2, "Client b", "12356abdo", 4000), c2(3, "Client c", "123487bbr", 6000);
 
-	/*f.addClient(c);
+	f.addClient(c);
 	f.addClient(c1);
 	f.addClient(c2);
 	f.addEmployee(e);
 	f.addEmployee(e1);
-	f.addAdmin(a);*/
+	f.addAdmin(a);
 
 	//Admin info :
-	//cout << "    Admin : \n";
-	//cout << "============\n";
-	//a.PrintINFO();
-	//cout << "\n===================\n";
+	cout << "    Admin : \n";
+	cout << "============\n";
+	a.PrintINFO();
+	cout << "\n===================\n";
 
 	////Employee info :
-	//cout << "  Employee : \n";
-	//cout << "============\n";
-	//e.PrintINFO();
-	//cout << "============\n";
-	//e1.PrintINFO();
-	//cout << "\n===================\n";
+	cout << "  Employee : \n";
+	cout << "============\n";
+	e.PrintINFO();
+	cout << "============\n";
+	e1.PrintINFO();
+	cout << "\n===================\n";
 
 	//Client info :
-	/*cout << " Client : \n";
+	cout << " Client : \n";
 	cout << "============\n";
 	cout << "befor deposit\n";
 	c.PrintINFO();
@@ -55,7 +55,7 @@ int main() {
 	c.transferTo(500, c1);
 	c.PrintINFO();
 	c1.PrintINFO();
-	cout << "\n===================\n";*/
+	cout << "\n===================\n";
 
 	e.addClient(c);
 	e.addClient(c1);
@@ -66,8 +66,8 @@ int main() {
 	a.addEmployee(e);
 	a.addEmployee(e1);
 
-	/*e.searchClient(1);
+	e.searchClient(1);
 	e.EditClient(1, "Client a", "654321asd", 3000);
-	e.searchClient(1);*/
+	e.searchClient(1);
 
 }
